@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alan M — Personal Interests</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #e4e6ea;
+            background-color: #18191a;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #242526;
+            padding: 2rem 1.5rem;
+            border-right: 1px solid #3a3b3c;
+        }
+
+        .site-title {
+            margin-bottom: 2rem;
+        }
+
+        .site-title a {
+            font-family: 'Merriweather', serif;
+            font-size: 2.5rem;
+            color: #e4e6ea;
+            text-decoration: none;
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        .site-title a:hover {
+            color: #8e6db8;
+        }
+
+        .nav-list {
+            list-style: none;
+        }
+
+        .nav-list li {
+            margin-bottom: 1rem;
+        }
+
+        .nav-list a {
+            color: #b0b3b8;
+            text-decoration: none;
+            font-size: 1.1rem;
+            display: block;
+            padding: 0.5rem 0;
+        }
+
+        .nav-list a:hover {
+            color: #8e6db8;
+        }
+
+        .nav-list a.active {
+            color: #8e6db8;
+            font-weight: 500;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 2rem 3rem;
+            max-width: 800px;
+        }
+
+        .section h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        .section h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+        }
+
+        .section h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .section p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .interest-category {
+            margin-bottom: 1.5rem;
+        }
+
+        .interest-list {
+            color: #e4e6ea;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                padding: 1rem;
+            }
+
+            .nav-list {
+                display: flex;
+                justify-content: space-around;
+            }
+
+            .nav-list li {
+                margin-bottom: 0;
+            }
+
+            .main-content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="site-title">
+                <a href="/">Alan M.</a>
+            </div>
+            <ul class="nav-list">
+                <li><a href="/" class="nav-link">About</a></li>
+                <li><a href="/career-interests" class="nav-link">Career Interests</a></li>
+                <li><a href="/personal-interests" class="nav-link active">Personal Interests</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <section class="section">
+                <h1>Personal Interests</h1>
+                <p>Things that capture my attention and curiosity (not MECE, sorry consulting friends):</p>
+
+                <div class="interest-category">
+                    <h2>Arts</h2>
+                    <div class="interest-list">
+                        I sincerely appreciate seeing the work of talented people who are masters of their craft. 
+                        Many people experience psychological satisfaction in seeing other people realize the ceiling of human potential, and I
+                        am no exception! For me, it's motivating, and I love learning about the process and discipline that goes into doing something great. 
+                        I'm fortunate to live in NYC where I'm able to see so many great shows: at the Met and many other museums, Chelsea and LES galleries, on Broadway, 
+                        and at Lincoln Center.
+                    </div>
+                </div>
+
+                <div class="interest-category">
+                    <h2>Journalism and Reading</h2>
+                    <div class="interest-list">
+                        I don't dedicate much time to reading fiction (even though I know I should). These days, it's mostly NYT / Bloomberg / WSJ, 
+                        the film trades, <em>The Dailies</em>, and Politico's <em>New York Playbook</em>. As media increasingly fragments into bite-sized content 
+                        and algorithm-driven explanations, I'm drawn to the thoughtful analysis and thorough / nuanced reporting found in 
+                        traditional journalism, so I try to read long-form stories in New Yorker or The Atlantic (as well as investigative stories from 
+                        NYT / WSJ) as much as I can. I read a lot of interesting things I find on Hacker News as well (especially tech topics).
+                    </div>
+                    <p>Even though people make fun of me for it, I love <em>60 Minutes</em> and <em>Sunday Morning</em>.</p>
+                    <p><em>The Power Broker</em> by Robert Caro (read in 2016 and again in 2023) and <em>Postwar</em> by Tony Judt are two books that 
+                    fundamentally changed my worldview.</p>
+                </div>
+
+                <div class="interest-category">
+                    <h2>Being Outside</h2>
+                    
+                    <h3>Hiking / Running</h3>
+                    <div class="interest-list">
+                        As a kid I backpacked all around Los Padres National Forest, Kings Canyon National Park, and Sequoia National Park. 
+                        Nowadays as a city slicker I try to check out AllTrails when I travel, and I only do dayhikes. I also need to explore more in upstate NY. In terms of running,
+                        as of summer 2025, I'm in the process of building my endurance back up before I focus on speed—my school schedule made it difficult to work runs in, 
+                        but my goal is to put up a solid marathon time in the next few years.
+                    </div>
+                    <div class="interest-list">
+                        This year, I ran the Brooklyn Half <em>slowly</em> after barely training for 5 months, and next year I plan to run the NYC Half 
+                        <em>faster</em>.
+                    </div>
+
+                    <h3>Birds</h3>
+                    <div class="interest-list">
+                        In NYC, we're lucky to host a number of migratory species in Central Park (in fall and spring). I'm always checking Twitter 
+                        (@BirdCentralPark) in addition to going out and trying to see what I can find on my own! Everywhere I go, I try to see if 
+                        there are any unique birds in the area. For me, hearing different calls and seeing unique behaviors of 
+                        different species enriches the experience and mindfulness of being outside and appreciating nature.
+                    </div>
+                    <div class="interest-list">
+                        I would not consider myself a <em>serious</em> birder because (1) I don't dedicate enough time to it, (2) I usually forget my 
+                        binoculars, and (3) I don't have a gigantic camouflage telephoto lens. I do try to keep my eBird account updated, though. 
+                        My favorite birds that I've spotted to-date are probably the <a href="https://ebird.org/species/iiwi" target="_blank" style="color: #8e6db8; text-decoration: none;">scarlet honeycreeper (the Hawaiian 'I'iwi bird)</a> and the American goldfinch.
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

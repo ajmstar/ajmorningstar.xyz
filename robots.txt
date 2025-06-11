@@ -1,0 +1,44 @@
+# robots.txt for ajmorningstar.xyz
+
+User-agent: *
+Allow: /
+
+# Allow main pages
+Allow: /index.html
+Allow: /career-interests.html
+Allow: /personal-interests.html
+
+# Allow favicon and icons
+Allow: /favicon.ico
+Allow: /favicon-16x16.png
+Allow: /favicon-32x32.png
+Allow: /apple-touch-icon.png
+Allow: /android-chrome-192x192.png
+Allow: /android-chrome-512x512.png
+
+# Allow manifest
+Allow: /site.webmanifest
+
+# Block common bot/spam directories that don't exist
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+Disallow: /cgi-bin/
+Disallow: /private/
+Disallow: /tmp/
+
+# Block files that shouldn't be crawled
+Disallow: /README.md
+Disallow: /*.png$ 
+Allow: /favicon-16x16.png
+Allow: /favicon-32x32.png
+Allow: /apple-touch-icon.png
+Allow: /android-chrome-192x192.png
+Allow: /android-chrome-512x512.png
+
+# Sitemap location
+Sitemap: https://ajmorningstar.xyz/sitemap.xml
+
+# Crawl delay (optional - only add if you experience server issues)
+# Crawl-delay: 1
