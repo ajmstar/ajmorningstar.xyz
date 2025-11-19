@@ -1,0 +1,134 @@
+/* Blog-specific styles */
+
+.blog-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #3a3b3c;
+}
+
+.blog-header h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.blog-meta {
+    color: #b0b3b8;
+    font-size: 0.95rem;
+}
+
+.blog-meta span {
+    margin-right: 1.5rem;
+}
+
+.blog-content h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 1.8rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.blog-content h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+    font-weight: 400;
+}
+
+.blog-content p {
+    margin-bottom: 1.2rem;
+    text-align: justify;
+}
+
+.blog-content ul {
+    margin-left: 2rem;
+    margin-bottom: 1.2rem;
+}
+
+.blog-content li {
+    margin-bottom: 0.8rem;
+}
+
+.blog-content strong {
+    color: #fff;
+}
+
+.blog-content em {
+    font-style: italic;
+}
+
+.blog-content a {
+    color: #8e6db8;
+    text-decoration: none;
+}
+
+.blog-content a:hover {
+    text-decoration: underline;
+}
+
+.note {
+    background-color: #242526;
+    border-left: 3px solid #8e6db8;
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+}
+
+/* Table styles */
+.generations-table {
+    width: 100%;
+    margin: 2rem 0;
+    overflow-x: auto;
+}
+
+.generations-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.generations-table th,
+.generations-table td {
+    border: 1px solid #3a3b3c;
+    padding: 1rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+.generations-table th {
+    background-color: #2a2b2c;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.generations-table td {
+    background-color: #242526;
+}
+
+.generations-table tr:hover td {
+    background-color: #2a2b2c;
+}
+
+.generations-table .row-header {
+    font-weight: 500;
+    background-color: #2a2b2c;
+}
+
+@media (max-width: 768px) {
+    .blog-header h1 {
+        font-size: 2rem;
+    }
+
+    .blog-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .blog-content h3 {
+        font-size: 1.2rem;
+    }
+}
+

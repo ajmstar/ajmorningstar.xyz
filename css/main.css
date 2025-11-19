@@ -1,0 +1,290 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #e4e6ea;
+    background-color: #18191a;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #242526;
+    padding: 2rem 1.5rem;
+    border-right: 1px solid #3a3b3c;
+}
+
+.site-title {
+    margin-bottom: 2rem;
+}
+
+.site-title a {
+    font-family: 'Merriweather', serif;
+    font-size: 2.5rem;
+    color: #e4e6ea;
+    text-decoration: none;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.site-title a:hover {
+    color: #8e6db8;
+}
+
+.nav-list {
+    list-style: none;
+}
+
+.nav-list li {
+    margin-bottom: 1rem;
+}
+
+.nav-list a {
+    color: #b0b3b8;
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: block;
+    padding: 0.5rem 0;
+}
+
+.nav-list a:hover {
+    color: #8e6db8;
+}
+
+.nav-list a.active {
+    color: #8e6db8;
+    font-weight: 500;
+}
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #b0b3b8;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-size: 1.1rem;
+}
+
+.dropdown-toggle:hover {
+    color: #8e6db8;
+}
+
+.dropdown-toggle.active {
+    color: #8e6db8;
+}
+
+.dropdown-arrow {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+    margin-left: 0.5rem;
+}
+
+.dropdown.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: #2a2b2c;
+    margin-top: 0.5rem;
+    border-radius: 4px;
+    padding-left: 1rem;
+}
+
+.dropdown.active .dropdown-menu {
+    max-height: 500px;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #b0b3b8;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+
+.dropdown-menu a:hover {
+    background-color: #3a3b3c;
+    color: #8e6db8;
+}
+
+.dropdown-menu a.active {
+    color: #8e6db8;
+    font-weight: 500;
+}
+
+.main-content {
+    flex: 1;
+    padding: 2rem 3rem;
+    max-width: 800px;
+}
+
+.section h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.section h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.section h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.section p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* List styling to match body text */
+.section ol,
+.section ul {
+    font-family: Arial, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #e4e6ea;
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+}
+
+.section ol li,
+.section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.section ul {
+    list-style-type: disc;
+}
+
+.section ol {
+    list-style-type: decimal;
+}
+
+.section a {
+    color: #8e6db8;
+    text-decoration: none;
+}
+
+.section a:hover {
+    text-decoration: underline;
+}
+
+/* Interest category styles (for personal-interests page) */
+.interest-category {
+    margin-bottom: 1.5rem;
+}
+
+.interest-list {
+    color: #e4e6ea;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Footnote styles (for career-interests page) */
+.footnote {
+    font-size: 0.9rem;
+    color: #b0b3b8;
+    border-top: 1px solid #3a3b3c;
+    padding-top: 1rem;
+    margin-top: 2rem;
+}
+
+/* Utility classes for common inline styles */
+.link-external {
+    color: #8e6db8;
+    text-decoration: none;
+}
+
+.link-external:hover {
+    text-decoration: underline;
+}
+
+.divider {
+    border: 1px solid #3a3b3c;
+    margin: 2rem 0;
+}
+
+.dropdown-menu.open {
+    max-height: 500px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .nav-list {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .nav-list li {
+        margin-bottom: 0;
+    }
+
+    .dropdown {
+        position: relative;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        background-color: #242526;
+        border: 1px solid #3a3b3c;
+        border-radius: 4px;
+        padding: 0.5rem;
+        z-index: 1000;
+        min-width: 150px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .dropdown.active .dropdown-menu {
+        max-height: none;
+    }
+
+    .main-content {
+        padding: 1.5rem;
+    }
+
+    .section ol,
+    .section ul {
+        padding-left: 1.5rem;
+    }
+}
+
