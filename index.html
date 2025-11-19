@@ -164,6 +164,69 @@
             font-weight: 500;
         }
 
+        /* Dropdown styles */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-toggle {
+            cursor: pointer;
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #b0b3b8;
+            font-size: 1.1rem;
+        }
+
+        .dropdown-toggle:hover {
+            color: #8e6db8;
+        }
+
+        .dropdown-toggle.active {
+            color: #8e6db8;
+        }
+
+        .dropdown-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown.active .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background-color: #2a2b2c;
+            margin-top: 0.5rem;
+            border-radius: 4px;
+        }
+
+        .dropdown.active .dropdown-menu {
+            max-height: 500px;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #b0b3b8;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #3a3b3c;
+            color: #8e6db8;
+        }
+
+        .dropdown-menu a.active {
+            color: #8e6db8;
+            font-weight: 500;
+        }
+
         .main-content {
             flex: 1;
             padding: 2rem 3rem;
@@ -263,6 +326,15 @@
                 <li><a href="/" class="nav-link active" aria-current="page">About</a></li>
                 <li><a href="/career-interests" class="nav-link">Career Interests</a></li>
                 <li><a href="/personal-interests" class="nav-link">Personal Interests</a></li>
+                <li class="dropdown">
+                    <div class="dropdown-toggle" onclick="toggleDropdown(this)">
+                        <span>Thoughts</span>
+                        <span class="dropdown-arrow">▼</span>
+                    </div>
+                    <div class="dropdown-menu">
+                        <a href="/blog/ai-is-not-the-product">AI Is Not The Product</a>
+                    </div>
+                </li>
             </ul>
         </nav>
 
@@ -344,5 +416,12 @@
             </article>
         </main>
     </div>
+
+    <script>
+        function toggleDropdown(element) {
+            const dropdown = element.parentElement;
+            dropdown.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
