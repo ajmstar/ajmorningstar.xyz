@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>AI Is Not The Product | Alan Morningstar</title>
+    <meta name="title" content="AI Is Not The Product - Alan Morningstar">
+    <meta name="description" content="A clearer, more durable way of thinking about AI in products that serve enterprises.">
+    <meta name="keywords" content="AI, product management, enterprise software, LLMs, agentic AI, data architecture">
+    <meta name="author" content="Alan Morningstar">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://ajmorningstar.xyz/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://ajmorningstar.xyz/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://ajmorningstar.xyz/favicon-16x16.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4BEC1PSTQ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-R4BEC1PSTQ');
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #e4e6ea;
+            background-color: #18191a;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #242526;
+            padding: 2rem 1.5rem;
+            border-right: 1px solid #3a3b3c;
+        }
+
+        .site-title {
+            margin-bottom: 2rem;
+        }
+
+        .site-title a {
+            font-family: 'Merriweather', serif;
+            font-size: 2.5rem;
+            color: #e4e6ea;
+            text-decoration: none;
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        .site-title a:hover {
+            color: #8e6db8;
+        }
+
+        .nav-list {
+            list-style: none;
+        }
+
+        .nav-list li {
+            margin-bottom: 1rem;
+        }
+
+        .nav-list a {
+            color: #b0b3b8;
+            text-decoration: none;
+            font-size: 1.1rem;
+            display: block;
+            padding: 0.5rem 0;
+        }
+
+        .nav-list a:hover {
+            color: #8e6db8;
+        }
+
+        .nav-list a.active {
+            color: #8e6db8;
+            font-weight: 500;
+        }
+
+        /* Dropdown styles */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-toggle {
+            cursor: pointer;
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #b0b3b8;
+            text-decoration: none;
+            transition: color 0.2s;
+            font-size: 1.1rem;
+        }
+
+        .dropdown-toggle:hover {
+            color: #8e6db8;
+        }
+
+        .dropdown-toggle.active {
+            color: #8e6db8;
+        }
+
+        .dropdown-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s;
+            margin-left: 0.5rem;
+        }
+
+        .dropdown.active .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding-left: 1rem;
+        }
+
+        .dropdown.active .dropdown-menu {
+            max-height: 500px;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.3rem 0;
+            font-size: 0.95rem;
+            color: #b0b3b8;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .dropdown-menu a:hover {
+            color: #8e6db8;
+        }
+
+        .dropdown-menu a.active {
+            color: #8e6db8;
+            font-weight: 500;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 2rem 3rem;
+            max-width: 800px;
+        }
+
+        .blog-header {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #3a3b3c;
+        }
+
+        .blog-header h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+            line-height: 1.2;
+        }
+
+        .blog-meta {
+            color: #b0b3b8;
+            font-size: 0.95rem;
+        }
+
+        .blog-meta span {
+            margin-right: 1.5rem;
+        }
+
+        .blog-content h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.8rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .blog-content h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.3rem;
+            margin-top: 2rem;
+            margin-bottom: 0.8rem;
+            font-weight: 400;
+        }
+
+        .blog-content p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        .blog-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .blog-content li {
+            margin-bottom: 0.8rem;
+        }
+
+        .blog-content strong {
+            color: #fff;
+        }
+
+        .blog-content em {
+            font-style: italic;
+        }
+
+        .blog-content a {
+            color: #8e6db8;
+            text-decoration: none;
+        }
+
+        .blog-content a:hover {
+            text-decoration: underline;
+        }
+
+        .note {
+            background-color: #242526;
+            border-left: 3px solid #8e6db8;
+            padding: 1rem 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+        }
+
+        /* Table styles */
+        .generations-table {
+            width: 100%;
+            margin: 2rem 0;
+            overflow-x: auto;
+        }
+
+        .generations-table table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        .generations-table th,
+        .generations-table td {
+            border: 1px solid #3a3b3c;
+            padding: 1rem;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .generations-table th {
+            background-color: #2a2b2c;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .generations-table td {
+            background-color: #242526;
+        }
+
+        .generations-table tr:hover td {
+            background-color: #2a2b2c;
+        }
+
+        .generations-table .row-header {
+            font-weight: 500;
+            background-color: #2a2b2c;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                padding: 1rem;
+            }
+
+            .nav-list {
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+            }
+
+            .nav-list li {
+                margin-bottom: 0;
+            }
+
+            .dropdown {
+                position: relative;
+            }
+
+            .dropdown-menu {
+                position: absolute;
+                background-color: #242526;
+                border: 1px solid #3a3b3c;
+                border-radius: 4px;
+                padding: 0.5rem;
+                z-index: 1000;
+                min-width: 150px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            }
+
+            .dropdown.active .dropdown-menu {
+                max-height: none;
+            }
+
+            .main-content {
+                padding: 1.5rem;
+            }
+
+            .blog-header h1 {
+                font-size: 2rem;
+            }
+
+            .blog-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .blog-content h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="site-title">
+                <a href="https://ajmorningstar.xyz/">AM</a>
+            </div>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="https://ajmorningstar.xyz/" class="nav-link">About</a></li>
+                    <li><a href="https://ajmorningstar.xyz/career-interests" class="nav-link">Career Interests</a></li>
+                    <li><a href="https://ajmorningstar.xyz/personal-interests" class="nav-link">Personal Interests</a></li>
+                    <li class="dropdown active">
+                        <div class="dropdown-toggle active" onclick="toggleDropdown(this)">
+                            <span>Thoughts</span>
+                            <span class="dropdown-arrow">▼</span>
+                        </div>
+                        <div class="dropdown-menu" style="max-height: 500px;">
+                            <a href="https://ajmorningstar.xyz/blog/ai-is-not-the-product" class="active">AI Is Not The Product</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <article>
+                <header class="blog-header">
+                    <h1>AI Is Not the Product. The Product Is the Product.</h1>
+                    <div class="blog-meta">
+                        <span>November 15, 2025</span>
+                        <span>11-13 minute read</span>
+                    </div>
+                </header>
+
+                <div class="blog-content">
+                    <p>Setting aside for a moment "agentic" (which I address later) and other buzzwords du jour, by 2025, business conversations about AI all converged on one dominant idea: large language models as chat interfaces. Nearly every executive had by then seen a demo of someone typing a question into a box and receiving a beautifully formatted answer, and many organizations immediately tried to replicate that experience inside their own systems. In the rush, teams bolted LLMs onto legacy software or, in some cases, created entirely new "AI tools" that floated in isolation. The excitement of the early ChatGPT years had encouraged people to equate "AI" with a chat window, leading to architectures that offered novelty but not transformational user value.</p>
+
+                    <p>This essay is my attempt to articulate a clearer, more durable way of thinking about AI in products that serve enterprises. It traces how we got here, why chat-first thinking has constrained product vision, and why the future of enterprise AI will depend on hybrid, contextual, governed systems—not just bigger models or smarter interfaces.</p>
+
+                    <h2>How We Got Here: Three Generations of Enterprise Computing</h2>
+                    
+                    <p>Why was the business community so obsessed with plugging these into their organizations at the first chance they got?</p>
+
+                    <p>For most of the past seventy years, enterprise computing has evolved in recognizable stages. The framing is oversimplified, but it helps explain the moment AI now occupies.</p>
+
+                    <p>The <b>first generation</b>—the ERP adoption era that stretched from the mid-20th century through the early 2000s—was about encoding business logic into systems of record. These systems captured transactions, standardized processes, and gave organizations their first digital memory. But the latency between something happening and someone knowing about it was enormous. Weekly, monthly, and quarterly reporting cycles were the norm. The central challenge of that era was simply getting the data right.</p>
+
+                    <p>The <b>second generation</b>, beginning around the mid-2000s, was defined by dashboards and BI tools. With the rise of Tableau, R, PowerBI, Looker, and similar technologies, leaders could finally see data in close to real time. Dashboards became the primary lens through which performance was interpreted. But dashboards brought their own constraints: users had to know where to look, how to interpret the visualizations, and what actions those insights implied. The data was fresher, but the burden of understanding still fell entirely on the human. You had to navigate, infer, decide, and then manually act. This era was fundamentally about visibility.</p>
+
+                    <p>Then came 2023 and the emergence of ChatGPT, which kicked off the <b>third generation:</b> the belief that systems could not only show data, but understand it. Suddenly, pattern recognition, narrative explanations, and decision suggestions seemed possible through natural language alone. Retrieval through RAG promised to eliminate navigation entirely, finally relieving high cognitive load. And once the idea of LLMs connected to organizational data took hold, it was only a short leap to imagining "agents" that could take actions on a user's behalf.</p>
+
+                    <div class="generations-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Customer Journey Stage</th>
+                                    <th>Generation 1 — ERP (1950s–late 2000s)<br>Systems of Record</th>
+                                    <th>Generation 2 — Reports & Dashboards (2005–2023)<br>Visibility & Interpretation</th>
+                                    <th>Generation 3 — AI / LLM Era (2023– ?)<br>Systems of Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="row-header">1. How users get data</td>
+                                    <td>Data is captured through operational processes encoded as business rules (ERP, MRP, CRM, Finance)<br><br>Users receive data after the fact via periodic exports, batch jobs, month-end close, or ad-hoc analyst pulls</td>
+                                    <td>Data flows into warehouses/lakes via ETL/ELT pipelines; users pull data via BI tools (Tableau, PowerBI, Looker, dashboards)<br><br>Data becomes near-real-time; users access it directly without waiting for analysts</td>
+                                    <td>Users retrieve data through LLM interfaces (chat, command palette, inline assistants) using natural language<br><br>RAG fetches data on-demand; users no longer navigate systems—the data is fetched for them</td>
+                                </tr>
+                                <tr>
+                                    <td class="row-header">2. How users see data</td>
+                                    <td>In tables, forms, and batch reports<br><br>Understanding requires domain knowledge + patience. Very low refresh frequency.</td>
+                                    <td>Interactive dashboards, slices, filters, time-series views<br><br>Much faster visibility; leaders expect real-time</td>
+                                    <td>Contextually presented summaries, synthesized insights, narrative explanations, anomaly detection, and conversational answers—without dashboards</td>
+                                </tr>
+                                <tr>
+                                    <td class="row-header">3. How users understand data</td>
+                                    <td>Users manually interpret patterns based on experience. No automated insights.</td>
+                                    <td>Users infer patterns visually, compare trends, "hunt" for insights across dashboards. Some automated alerts.</td>
+                                    <td>Models infer patterns automatically, summarize what matters, and surface insights proactively. Users ask questions like they would to an analyst.</td>
+                                </tr>
+                                <tr>
+                                    <td class="row-header">4. How users decide</td>
+                                    <td>Decisions made slowly; based on human intuition and selective reports</td>
+                                    <td>Decisions made faster but still require humans to interpret the visualizations and choose actions</td>
+                                    <td>Systems propose decisions ("here are three actions you could take") based on inference from operational and historical data</td>
+                                </tr>
+                                <tr>
+                                    <td class="row-header">5. How users act</td>
+                                    <td>Entirely manual actions—change a process, update a record, email someone, approve something</td>
+                                    <td>Still manual, just more informed; dashboards do not take actions for you</td>
+                                    <td>Agentic workflows execute tasks autonomously (or semi-autonomously): update systems, trigger workflows, message stakeholders, enact policy changes</td>
+                                </tr>
+                                <tr>
+                                    <td class="row-header">Latency from event → awareness → action</td>
+                                    <td>Weeks → Months<br>(batch era)</td>
+                                    <td>Hours → Days → Minutes<br>(near-real-time visibility)</td>
+                                    <td>Seconds → Instantaneous<br>(real-time retrieval, inference, and action)</td>
+                                </tr>
+                                <tr>
+                                    <td class="row-header">Biggest constraints</td>
+                                    <td>Data availability and correctness</td>
+                                    <td>Data modeling, dashboard design, cognitive burden of interpretation, navigation across tools</td>
+                                    <td>Quality of context, grounding, determinism vs. inference, governance, safety, hallucination control, agent reliability</td>
+                                </tr>
+                                <tr>
+                                    <td class="row-header">Data usability</td>
+                                    <td>Limited to dedicated roles with specialized skills</td>
+                                    <td>More easily accessible and understandable with slight learning curve</td>
+                                    <td>Anyone can use data to drive decisions within their scope</td>
+                                </tr>
+                                <tr>
+                                    <td class="row-header">What this generation was "about"</td>
+                                    <td><b>Getting the data right.</b> Creating systems of record</td>
+                                    <td><b>Seeing the data clearly.</b> Improving visibility and access</td>
+                                    <td><b>Using the data intelligently.</b> Understanding, deciding, and   acting in one loop</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>But much of this imagination rested on assumptions that didn't survive contact with reality, and many enterprises started to realize the problem with the popular plug-and-play, LLM-into-chat construct of AI product.</p>
+
+                    <h2>The AI Hype Cycle and its Limits</h2>
+                    
+                    <p>By 2025, "agentic AI" had become the buzzword in every boardroom. The term "agent" became so overused that it lost definition. For some, an agent was a workflow executor. For others, it was a conversational assistant with API access. For still others, it was an autonomous operator capable of completing entire multi-step processes without human involvement. These interpretations were incompatible, yet often discussed as if they were interchangeable. Whenever people talk about agents, I always ask them what exactly they mean.</p>
+
+                    <p>Businesses quickly learned how overestimated the capabilities were—and how underestimated the cost, complexity, and governance challenges would be.</p>
+
+                    <h3>Non-deterministic nature</h3>
+                    <p>LLMs, impressive as they are, remain stochastic systems. They hallucinate. They cannot be relied upon for row-level data analysis or anything requiring arithmetic precision. That created immediate friction with enterprise contexts, where rules, constraints, and safety boundaries are explicit.</p>
+
+                    <h3>Unsustainable cost structure at scale</h3>
+                    <p>In general, many companies learned that leaning on a chat interface meant:</p>
+                    <ul>
+                        <li>Inference heavy process</li>
+                        <li>Natural language input allowed users to ask questions not related to anything at work</li>
+                        <li>Users would ask the same questions again and again</li>
+                        <li>Long-winded response</li>
+                    </ul>
+
+                    <p>All of these drove token usage through the roof, making costs prohibitive such that these solutions were not scalable across an enterprise in a sustainable way for the business.</p>
+
+                    <h3>Vendor lock-in</h3>
+                    <p>The potential of strong lock-in with OpenAI (or the other major providers) presented single-point-of-failure and future economic risk</p>
+
+                    <h3>Regulatory constraints, data privacy and cybersecurity concerns</h3>
+                    <p>Really, we're going to give OpenAI access to all our data? What if a bad actor puts a malicious query into the chat? Is the chatbot's API access circumventing previously implemented access privileges to safeguard sensitive data?</p>
+
+                    <p>Surely everybody thought about and perfected this tech overhead and complexity beforehand /s</p>
+
+                    <h2>How AI Chatbots Became a Mental Trap</h2>
+                    
+                    <p>I believe that many enterprises, and their PMs shipping AI products, have been artificially constrained by the chat construct, limiting themselves from thinking more broadly and holistically about core customer needs and the value that is really provided by chatbots. For example, someone might say "when I'm sitting in a sales update meeting, I have to go into the CRM and pull information in real time so that I can talk through it to provide updates." That person, or a PM, might envision a solution as a chatbot that allows salespeople to ask questions and receive updated information via LLM. In reality, maybe the sales update meeting could have been altogether eliminated if the sales team's manager was kept apprised in real time regarding sales efforts, through some AI-enabled solution (this could take many forms).</p>
+
+                    <p>And, for that use case, is the idea that business users should ask questions to retrieve every piece of data they need throughout the day? Isn't that getting to the same place as custom reports and dashboards in a much more compute intensive way?</p>
+
+                    <p>From a logistical point of view, how will the chats be stored, organized, and referenced in the future? Will it become a new navigational nightmare to recall past conversations where valuable work or thinking might have taken shape?</p>
+
+                    <h2>Effective "AI" Uses Determinism</h2>
+                    
+                    <p>In my view, much of what people seek to accomplish with AI must be built on a thoughtful blend of deterministic logic and AI inference in order to be scalable, reliable, and cost-effective. This means aggressively reducing unnecessary LLM inference—offloading where possible through smart caching, deterministic rule engines that encode business logic, and lighter-weight ML or SLMs running on edge-friendly hardware (obligatory shoutout @ Cisco AI-ready UCS/XEON/Hyperflex nodes). Not every AI experience should default to a chat interface; products should expose intelligence in the form that best fits the user's workflow.</p>
+
+                    <p>In many cases that means command palettes, assisted form-fill, inline predictions, explainable alerts, queue triage systems, custom generated workflows, or agentic back-office automation—not conversation. I strongly feel that the pinnacle of AI product is reached when the intelligence is seamlessly embedded in the experience, quietly providing value without loudly drawing attention to itself. Integrating AI into products quietly should remove friction and elevates outcomes in ways that feel intuitive. Recommendation systems are the clearest example: they’ve been around for decades, yet nobody really thinks about them. Despite what some might hope for, no user thinks to themselves, “I am so impressed by this cutting edge AI model that just improved my movie night”; they just enjoy better choices with less effort. The highest form of AI product makes users feel that, “this just works, and it works for me.”</p>
+                    
+                    <p>The real task is designing systems in which deterministic components handle the predictable, safety-critical, and latency-sensitive paths, while model inference is reserved for the parts of the workflow where uncertainty or creativity is actually required—ideally governed by carefully curated model context, scoped to each use case and even personalized at the user level.</p>
+                    
+                    <p>All of this ultimately rests on the bedrock of great data architecture.</p>
+
+                    <h2>Architecture as Enabler of Agility in the AI Era</h2>
+                    
+                    <p>When I was drafting this post, I asked Equilibrium Energy's founder whether they invested in architecture upfront or built use cases first and sorted out the foundations later. He told me he gathered everyone into a room and vigorously encouraged them to throttle back their obsession with velocity and the weekly-MVP treadmill of use cases. The message was simple: you cannot move fast if you don't first build the substrate that makes speed sustainable.</p>
+
+                    <p>This is where people often get confused: architecture is not incompatible with Agile. In fact, the Agile Manifesto explicitly states that "continuous attention to technical excellence and good design enhances agility." Good architecture is exactly that technical excellence. And it maps directly to the PM's responsibility: you cannot "satisfy the customer through early and continuous delivery of valuable software" unless you deeply understand how users interact with data—where latency matters, what context is required, how decisions flow through their domain, and what invariants govern their workflows. Architecture is not anti-Agile; it is the enabler of agility.</p>
+
+                    <p>The Manifesto's insistence that "business people and developers must work together daily" captures the core of PM work on AI systems: collaborating with architects and engineers so that schemas, caching layers, routing rules, and pipelines reflect real user needs and scale across many use cases rather than being bespoke one-offs. And when Agile praises "simplicity—the art of maximizing the amount of work not done," it is directly advocating for shared infrastructure—systems that avoid duplicating work and prevent the proliferation of ad-hoc pipelines that slow teams down. In other words, building coherent data architecture is the Agile thing to do.</p>
+
+                    <p>For AI specifically, PMs carry an additional responsibility: they must understand user needs at the deepest most abstracted level and anticipate the attributes (and attribute combinations) that will drive the majority of use cases. They must partner closely with engineers and architects to ensure those attributes are present, standardized, and governed in the data layer that their AI products are based on. This work is essential not only for enabling high-granularity use-case definition—critical for MCP configuration, feature construction, insights surfaces, and agentic behavior—but also for ensuring that a single, coherent architecture supports data stewardship and incorporates existing well-founded guardrails (e.g., RBAC) in the high-risk domain of AI. Without this backbone, "AI product work" becomes a series of brittle demos and tech debt bonfires instead of a scalable system capable of delivering real value.</p>
+
+                    <h2>Closing Note</h2>
+                    
+                    <div class="note">
+                        <p>A majority of this was written in June and July of 2025. I am by no means an AI expert, and all of this is obviously my opinion. This is really mainly a journal that summarizes my working framework for thinking about AI in business, and the role of product managers in implementing AI, based on my synthesized impressions of my experiences, interaction, number of readings from around that time period. I am grateful to have attended Splunk's Data and AI Summit, where Srinivas Narayanan gave great food for thought, and for a guest lecture at NYU Stern by Mike Montero on November 13, 2025 that inspired me to finish this post.</p>
+
+                        <p>I owe my team at Cisco, Evan Parthenis, Patrick McGregor, and so many others for the conversations that fueled my thoughts on these topics and gave rise to this post.</p>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <script>
+        function toggleDropdown(element) {
+            const dropdown = element.parentElement;
+            dropdown.classList.toggle('active');
+        }
+
+        // Keep dropdown open by default on blog pages
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdown = document.querySelector('.dropdown');
+            if (dropdown) {
+                dropdown.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
