@@ -234,10 +234,6 @@ body {
     margin: 2rem 0;
 }
 
-.dropdown-menu.open {
-    max-height: 500px;
-}
-
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
