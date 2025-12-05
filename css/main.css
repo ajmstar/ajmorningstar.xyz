@@ -78,10 +78,10 @@ body {
     justify-content: space-between;
     color: #b0b3b8;
     text-decoration: none;
-    transition: color 0.2s;
     font-size: 1.1rem;
 }
 
+/* hover + active color only */
 .dropdown-toggle:hover {
     color: #8e6db8;
 }
@@ -90,37 +90,36 @@ body {
     color: #8e6db8;
 }
 
+/* keep the arrow static, no animation */
 .dropdown-arrow {
     font-size: 0.8rem;
-    transition: transform 0.3s ease;
     margin-left: 0.5rem;
+    transform: none;
+    transition: none;
 }
 
-.dropdown.active .dropdown-arrow {
-    transform: rotate(180deg);
-}
-
+/* MENU: completely hidden by default */
 .dropdown-menu {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
+    display: none;              /* <-- key: no layout, no box */
     background-color: #2a2b2c;
     margin-top: 0.5rem;
     border-radius: 4px;
     padding-left: 1rem;
 }
 
-.dropdown.active .dropdown-menu {
-    max-height: 500px;
+/* Show menu when dropdown is active (or .open for blog page) */
+.dropdown.active .dropdown-menu,
+.dropdown-menu.open {
+    display: block;
 }
 
+/* Links inside the dropdown */
 .dropdown-menu a {
     display: block;
     padding: 0.5rem 1rem;
     color: #b0b3b8;
     text-decoration: none;
     font-size: 1rem;
-    transition: color 0.2s;
 }
 
 .dropdown-menu a:hover {
@@ -263,6 +262,7 @@ body {
         position: relative;
     }
 
+    /* mobile dropdown menu: same show/hide (display), just positioned */
     .dropdown-menu {
         position: absolute;
         background-color: #242526;
@@ -272,10 +272,7 @@ body {
         z-index: 1000;
         min-width: 150px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-    }
-
-    .dropdown.active .dropdown-menu {
-        max-height: none;
+        margin-top: 0.5rem;
     }
 
     .main-content {
