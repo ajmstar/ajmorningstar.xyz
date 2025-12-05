@@ -98,13 +98,18 @@ body {
     transition: none;
 }
 
-/* MENU: completely hidden by default */
 .dropdown-menu {
-    display: none;              /* <-- key: no layout, no box */
+    display: none;
     background-color: #2a2b2c;
     margin-top: 0.5rem;
     border-radius: 4px;
     padding-left: 1rem;
+}
+
+/* Show menu when dropdown is active (or .open for blog page) */
+.dropdown.active .dropdown-menu,
+.dropdown-menu.open {
+    display: block;
 }
 
 /* Show menu when dropdown is active (or .open for blog page) */
@@ -258,8 +263,9 @@ body {
         position: relative;
     }
 
-    /* mobile dropdown menu: same show/hide (display), just positioned */
+    /* Mobile dropdown menu — must reapply display: none */
     .dropdown-menu {
+        display: none;  /* ← FIX: prevents Safari from drawing the blank box */
         position: absolute;
         background-color: #242526;
         border: 1px solid #3a3b3c;
@@ -271,6 +277,12 @@ body {
         margin-top: 0.5rem;
     }
 
+    /* When active, dropdown shows normally */
+    .dropdown.active .dropdown-menu,
+    .dropdown-menu.open {
+        display: block;
+    }
+
     .main-content {
         padding: 1.5rem;
     }
@@ -280,4 +292,3 @@ body {
         padding-left: 1.5rem;
     }
 }
-
